@@ -14,10 +14,9 @@ class BilheteUnico {
   
   
   Date proximaRecarga(){
-    int diasXsaldo = saldo / valorDiaUtil;
+    double diasXsaldo = saldo / valorDiaUtil;
     Date now = new Date.now();
-    now.add(new Duration(diasXsaldo));
-    return now;
+    return now.add(new Duration(diasXsaldo.toInt()));
   }
   
   toString(){
