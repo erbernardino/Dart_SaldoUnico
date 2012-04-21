@@ -14,7 +14,13 @@ class SaldoUnico {
     double saldo = Math.parseDouble(document.query('#saldo').value);
     double valorDiaUtil = Math.parseDouble(document.query('#valorDiaUtil').value);
     BilheteUnico bu = new BilheteUnico(saldo, valorDiaUtil);
-    document.query('#resultado').value = bu.proximaRecarga().toString();
+    Date proximaRecarga = bu.proximaRecarga();
+    int dia = proximaRecarga.day;
+    int mes = proximaRecarga.month;
+    int ano = proximaRecarga.year;
+    // document.query('#resultado').value =  dia + "/" + mes + "/" + ano;
+    // document.query('#resultado').value =  " " + dia + "/" + mes + "/" + ano;
+    document.query('#resultado').value = "$dia/$mes/$ano";
   }
   
 }

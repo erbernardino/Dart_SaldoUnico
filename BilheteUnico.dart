@@ -27,7 +27,7 @@ class BilheteUnico {
     }
     return next;
   }
-  
+   
   toString(){
     return "Saldo: $saldo, valor dia util: $valorDiaUtil";
   }

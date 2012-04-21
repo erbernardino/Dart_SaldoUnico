@@ -11,8 +11,7 @@ class BilheteUnicoTest {
     [testIncialVariaveis,
     testIncrementaSaldo,
     testDecrementaSaldo, 
-    testCalculaProximaRecarga,
-    testFormataDate].forEach(beforeEach);
+    testCalculaProximaRecarga].forEach(beforeEach);
   }
   
   static void beforeEach(var test){
@@ -45,11 +44,6 @@ class BilheteUnicoTest {
     Expect.equals(4, proximaRecarga.month);
     Expect.equals(3, proximaRecarga.day);
   }
-  
-  static void testFormataDate(){
-    Date now = new Date(2012, 4, 1, 0, 0, 0, 0);
-  }
-  
 }
 
 void main() {
