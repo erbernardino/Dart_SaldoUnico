@@ -23,7 +23,7 @@ class BilheteUnico {
     Date currDate = now;
     while(currSaldo >= valorDiaUtil){
       currDate = currDate.add(new Duration(1));
-      if(currDate.weekday == Date.SAT && currDate.weekday == Date.SUN){
+      if(currDate.weekday == Date.SAT || currDate.weekday == Date.SUN){
         currSaldo -= valorDiaFds;
       } else {
         currSaldo -= valorDiaUtil;

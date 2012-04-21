@@ -13,7 +13,8 @@ class SaldoUnico {
   void calcularHandler(Event event){
     double saldo = Math.parseDouble(document.query('#saldo').value);
     double valorDiaUtil = Math.parseDouble(document.query('#valorDiaUtil').value);
-    BilheteUnico bu = new BilheteUnico(saldo, valorDiaUtil);
+    double valorDiaFDS = Math.parseDouble(document.query('#valorDiaFDS').value);
+    BilheteUnico bu = new BilheteUnico(saldo, valorDiaUtil, valorDiaFDS);
     Date proximaRecarga = bu.proximaRecarga();
     int dia = proximaRecarga.day;
     int mes = proximaRecarga.month;
