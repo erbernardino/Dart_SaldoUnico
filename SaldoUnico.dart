@@ -1,4 +1,5 @@
 #import('dart:html');
+#source('BilheteUnico.dart');
 
 class SaldoUnico {
 
@@ -6,13 +7,16 @@ class SaldoUnico {
   }
 
   void run() {
-    write("Hello World!");
+    document.query('#calcular').on.click.add(calcularHandler);
   }
-
-  void write(String message) {
-    // the HTML library defines a global "document" variable
-    document.query('#status').innerHTML = message;
+  
+  void calcularHandler(Event event){
+    double saldo = Math.parseDouble(document.query('#saldo').value);
+    double valorDiaUtil = Math.parseDouble(document.query('#valorDiaUtil').value);
+    BilheteUnico bu = new BilheteUnico(saldo, valorDiaUtil);
+    document.query('#resultado').value = bu.proximaRecarga().toString();
   }
+  
 }
 
 void main() {
