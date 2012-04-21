@@ -13,10 +13,19 @@ class BilheteUnico {
   }
   
   
-  Date proximaRecarga(){
+  Date proximaRecarga([Date now]){
+    if(now == null){
+      now = new Date.now().add(new Duration(1));
+    }
     double diasXsaldo = saldo / valorDiaUtil;
-    Date now = new Date.now();
-    return now.add(new Duration(diasXsaldo.toInt()));
+    Date next = now;
+    for(int i = 1; i <= diasXsaldo; i++){
+      Date currDate = now.add(new Duration(i));
+      if(currDate.weekday != Date.SAT && currDate.weekday != Date.SUN){
+        next = next.add(new Duration(1));
+      }
+    }
+    return next;
   }
   
   toString(){

@@ -37,11 +37,12 @@ class BilheteUnicoTest {
   }
   
   static void testCalculaProximaRecarga(){
-    bu.saldo = 30.0;
-    Date expectedProximaRecarga = new Date.now();
-    Expect.equals(expectedProximaRecarga.year, bu.proximaRecarga().year);
-    Expect.equals(expectedProximaRecarga.month, bu.proximaRecarga().month);
-    Expect.equals(expectedProximaRecarga.day + 5, bu.proximaRecarga().day);
+    bu.saldo = 15.0;
+    Date now = new Date(2012, 4, 1, 0, 0, 0, 0);
+    Date proximaRecarga = bu.proximaRecarga(now);
+    Expect.equals(2012, proximaRecarga.year);
+    Expect.equals(4, proximaRecarga.month);
+    Expect.equals(3, proximaRecarga.day);
   }
   
 }
