@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="pt-br">
   <head>
-    <title>SaldoUnico</title>
+  	<meta charset="utf-8">
+    <title>Saldo Unico</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-#container {
-	width: 300px;
-	text-align: center;
-	margin-top: 50px;
-	margin-right: auto;
-	margin-bottom: auto;
-	margin-left: auto;
-}
-</style>
   </head>
-  <body>
-    <h1>SaldoUnico</h1>
-    <h2 id="status">dart is not running</h2>
-    
+  <body>    
     <div id="container">
-		Saldo: <input id="saldo"><br> 
-		Valor por dia util: <input id="valorDiaUtil"><br>  
-		Proxima recarga: <input id="resultado" readonly><br>
-		<input type="button" value="Calcular" id="calcular" class="btn btn-large btn-primary">
+    	<form class="form-horizontal">
+	        <fieldset>
+	        	<legend>Calcule a sua proxima recarga</legend>
+				<div class="control-group">
+					<label class="control-label" for="input01">Saldo:</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="saldo">
+						<p class="help-block">Saldo atual do Bilhete Unico.</p>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="input01">Valor gasto por dia util:</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="valorDiaUtil">
+						<!-- <p class="help-block"></p> -->
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="input01">Proxima recarga:</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="resultado">
+						<p class="help-block">Estimativa de data que voce precisara carrega o seu Bilhete Unico.</p>
+					</div>
+				</div>		
+				
+				<div class="form-actions">
+					<input type="button" value="Calcular" id="calcular" class="btn btn-large btn-primary">
+		        </div>
+	        </fieldset>
+        </form>
 	</div>
     
     <script type="application/dart" src="SaldoUnico.dart"></script>
