@@ -3,10 +3,29 @@
 <html>
   <head>
     <title>SaldoUnico</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#container {
+	width: 300px;
+	text-align: center;
+	margin-top: 50px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}
+</style>
   </head>
   <body>
     <h1>SaldoUnico</h1>
     <h2 id="status">dart is not running</h2>
+    
+    <div id="container">
+	<input name="campo1"><br> 
+	<input name="campo2"><br>  
+	<input name="resultado" readonly><br>
+	<input type="button" value="Calcular" class="btn btn-large btn-primary">
+	</div>
+    
     <script type="application/dart" src="SaldoUnico.dart"></script>
     <script src="http://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
   </body>
