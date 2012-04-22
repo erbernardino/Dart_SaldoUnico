@@ -44,7 +44,7 @@ class SaldoUnico {
     }
     
     //20060415T180000Z/20060415T190000Z    
-    String dateStr = "$ano$mes$dia/$ano$mes$dia";
+    String dateStr = "$ano$mes$dia"+"T050000Z/$ano$mes$dia"+"T060000Z";
     
     return '<a target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&text=$title&dates=$dateStr&details=$description&trp=true&sprop=name:SaldoUnico"><img src="http://www.google.com/calendar/images/ext/gc_button2.gif" ></a>';
   }
