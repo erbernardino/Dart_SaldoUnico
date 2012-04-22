@@ -1,6 +1,6 @@
 #import('dart:html');
 #source('BilheteUnico.dart');
-
+#source('Utils.dart');
 
 class SaldoUnico {
 
@@ -18,7 +18,7 @@ class SaldoUnico {
     BilheteUnico bu = new BilheteUnico(saldo, valorDiaUtil, valorDiaFDS);
     Date proximaRecarga = bu.proximaRecarga();
     
-    document.query('#resultado').value = bu.formatDate(proximaRecarga);
+    document.query('#resultado').value = Utils.formatDate(proximaRecarga);
     document.query('#resultado').insertAdjacentHTML("afterEnd", getUrlToCallendar(proximaRecarga,"Recarregar Bilhete Único", "Se esquecer de carragar vai parar na catraca!!!") ) ;
     
     document.query("#saldoPorDia").innerHTML = bu.valorPorDia.toString();

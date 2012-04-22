@@ -27,12 +27,11 @@ class BilheteUnico {
     while(currSaldo >= valorDiaUtil){
       currDate = currDate.add(new Duration(1));
       if(currDate.weekday == Date.SAT || currDate.weekday == Date.SUN){
-        
         currSaldo -= valorDiaFds;
-        valorPorDia[formatDate(currDate)]= currSaldo;
+        valorPorDia[Utils.formatDate(currDate)]= currSaldo;
       } else {
         currSaldo -= valorDiaUtil;
-        valorPorDia[formatDate(currDate)] = currSaldo;
+        valorPorDia[Utils.formatDate(currDate)] = currSaldo;
       }
     }
     return currDate;
@@ -41,14 +40,4 @@ class BilheteUnico {
   toString(){
     return "Saldo: $saldo, valor dia util: $valorDiaUtil";
   }
-  
-  String formatDate(Date date){
-    int dia = date.day;
-    int mes = date.month;
-    int ano = date.year;
-    
-    return "$dia/$mes/$ano";
-    
-  }
-  
 }
