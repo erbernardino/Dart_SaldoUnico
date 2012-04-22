@@ -24,15 +24,14 @@ class BilheteUnico {
     }
     double currSaldo = saldo;
     Date currDate = now;
-    while(currSaldo >= valorDiaUtil){
-      currDate = currDate.add(new Duration(1));
+    while(currSaldo > valorDiaFds && currSaldo > valorDiaUtil){
       if(currDate.weekday == Date.SAT || currDate.weekday == Date.SUN){
         currSaldo -= valorDiaFds;
-        valorPorDia[Utils.formatDate(currDate)]= currSaldo;
       } else {
         currSaldo -= valorDiaUtil;
-        valorPorDia[Utils.formatDate(currDate)] = currSaldo;
       }
+      currDate = currDate.add(new Duration(1));
+      valorPorDia[Utils.formatDate(currDate)] = currSaldo;
     }
     return currDate;
   }

@@ -1,4 +1,5 @@
 #source("BilheteUnico.dart");
+#source("Utils.dart");
 
 class BilheteUnicoTest {
 
