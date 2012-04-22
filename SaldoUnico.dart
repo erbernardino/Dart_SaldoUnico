@@ -26,12 +26,7 @@ class SaldoUnico {
   
   
   String getUrlToCallendar(Date date, String title, String description){
-    /* Exemplo de URL
-    
-      <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=Brunch at Java Cafe&dates=20060415T180000Z/20060415T190000Z&location=Java Cafe, San Francisco, CA&details=Try our Saturday brunch special:<br><br>French toast with fresh fruit<br><br>Yum!&trp=true&sprop= website:http://www.javacafebrunches.com&sprop;=name:Jave Cafe"><img src="http://www.google.com/calendar/images/ext/gc_button2.gif"></a>
-    */
     String dateStr = Utils.formateDateFromTo(date);
-   
     
     return '<a target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&text=$title&dates=$dateStr&details=$description&trp=true&sprop=name:SaldoUnico"><img src="http://www.google.com/calendar/images/ext/gc_button2.gif" ></a>';
   }

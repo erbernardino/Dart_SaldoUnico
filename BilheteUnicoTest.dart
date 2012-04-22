@@ -44,7 +44,7 @@ class BilheteUnicoTest {
     Date proximaRecarga = bu.proximaRecarga(now);
     Expect.equals(2012, proximaRecarga.year);
     Expect.equals(4, proximaRecarga.month);
-    Expect.equals(3, proximaRecarga.day);
+    Expect.equals(4, proximaRecarga.day);
   }
   
   static void testCalculaProximaRecargaComFDS(){

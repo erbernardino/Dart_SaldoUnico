@@ -30,8 +30,9 @@ class BilheteUnico {
       } else {
         currSaldo -= valorDiaUtil;
       }
-      currDate = currDate.add(new Duration(1));
+      
       valorPorDia[Utils.formatDate(currDate)] = currSaldo;
+      currDate = currDate.add(new Duration(1));
     }
     return currDate;
   }
