@@ -19,9 +19,10 @@ class SaldoUnico {
     Date proximaRecarga = bu.proximaRecarga();
     
     document.query('#resultado').value = Utils.formatDate(proximaRecarga);
-    document.query('#resultado').insertAdjacentHTML("afterEnd", getUrlToCallendar(proximaRecarga,"Recarregar Bilhete Único", "Se esquecer de carragar vai parar na catraca!!!") ) ;
+    document.query('#callendarButton').innerHTML = getUrlToCallendar(proximaRecarga,"Recarregar Bilhete Único", "Se esquecer de carragar vai parar na catraca!!!")  ;
     
-    document.query("#saldoPorDia").innerHTML = bu.valorPorDia.toString();
+    //document.query("#saldoPorDia").innerHTML = bu.valorPorDia.toString();
+    window.postMessage(Utils.geraDados(bu.valorPorDia), '*');
   }
   
   

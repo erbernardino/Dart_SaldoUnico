@@ -5,6 +5,28 @@
   	<meta charset="utf-8">
     <title>Saldo Unico</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    	
+    
+    window.onmessage=function(messageEvent){
+    	
+    	drawChart(messageEvent.data);
+    	
+    }
+    
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart(data) {
+        var data = google.visualization.arrayToDataTable(data);
+        var options = {
+          title: 'Gastos'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <body>    
     <div id="container">
@@ -35,22 +57,22 @@
 					</div>
 				</div>
 				
-				<div class="control-group">
+				<div class="control-group" style="width:600px;">
 					<label class="control-label" for="input01">Proxima recarga:</label>
 					<div class="controls">
-						<input type="text" class="input-xlarge" id="resultado">
+					<input type="text" class="input-xlarge" id="resultado" />
+					<div id="callendarButton" style="float:right;" /></div>
 						<p class="help-block">Estimativa de data que voce precisara carrega o seu Bilhete Unico.</p>
 					</div>
 				</div>		
 				
 				<div class="form-actions">
 					<input type="button" value="Calcular" id="calcular" class="btn btn-large btn-primary">
+					
 		        </div>
 	        </fieldset>
         </form>
-        <div id="saldoPorDia">
-        
-        </div> 
+        <div id="chart_div" style="width: 900px; height: 500px;"></div> 
 	</div>
     
     <script type="application/dart" src="SaldoUnico.dart"></script>
