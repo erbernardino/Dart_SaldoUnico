@@ -7,6 +7,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
+
     	
     
     window.onmessage=function(messageEvent){
@@ -24,12 +25,13 @@
         };
 
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+
         chart.draw(data, options);
       }
     </script>
   </head>
   <body>    
-    <div id="container">
+    <div id="container" style="width: 900px; padding-top:30px; margin:auto;">
     	<form class="form-horizontal">
 	        <fieldset>
 	        	<legend>Calcule a sua proxima recarga</legend>
@@ -60,8 +62,10 @@
 				<div class="control-group" style="width:600px;">
 					<label class="control-label" for="input01">Proxima recarga:</label>
 					<div class="controls">
+
 					<input type="text" class="input-xlarge" id="resultado" />
 					<div id="callendarButton" style="float:right;" /></div>
+
 						<p class="help-block">Estimativa de data que voce precisara carrega o seu Bilhete Unico.</p>
 					</div>
 				</div>		
@@ -72,7 +76,9 @@
 		        </div>
 	        </fieldset>
         </form>
+
         <div id="chart_div" style="width: 900px; height: 500px;"></div> 
+
 	</div>
     
     <script type="application/dart" src="SaldoUnico.dart"></script>
