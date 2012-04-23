@@ -18,13 +18,20 @@ class BilheteUnico {
   }
   
   
+  bool temSaldo([double currSaldo]){
+    if(currSaldo == null){
+      currSaldo = saldo;
+    }
+    return currSaldo > valorDiaFds && currSaldo > valorDiaUtil;
+  }
+  
   Date proximaRecarga([Date now]){
     if(now == null){
       now = new Date.now().add(new Duration(1));
     }
     double currSaldo = saldo;
     Date currDate = now;
-    while(currSaldo > valorDiaFds && currSaldo > valorDiaUtil){
+    while(temSaldo(currSaldo)){
       if(currDate.weekday == Date.SAT || currDate.weekday == Date.SUN){
         currSaldo -= valorDiaFds;
       } else {

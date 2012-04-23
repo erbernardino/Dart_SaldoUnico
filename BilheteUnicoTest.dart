@@ -13,7 +13,11 @@ class BilheteUnicoTest {
     testIncrementaSaldo,
     testDecrementaSaldo, 
     testCalculaProximaRecarga,
-    testCalculaProximaRecargaComFDS].forEach(beforeEach);
+    testCalculaProximaRecargaComFDS,
+    testTemSaldoDiaUtil,
+    testTemSaldoDiaFds,
+    testNaoTemSaldoDiaUtil,
+    testNaoTemSaldoDiaFds].forEach(beforeEach);
   }
   
   static void beforeEach(var test){
@@ -45,6 +49,34 @@ class BilheteUnicoTest {
     Expect.equals(2012, proximaRecarga.year);
     Expect.equals(4, proximaRecarga.month);
     Expect.equals(4, proximaRecarga.day);
+  }
+  
+  static void testTemSaldoDiaUtil(){
+    bu.saldo = 7.0;
+    bu.valorDiaUtil = 6.0;
+    bu.valorDiaFds = 0.0;
+    Expect.isTrue(bu.temSaldo());
+  }
+  
+  static void testTemSaldoDiaFds(){
+    bu.saldo = 7.0;
+    bu.valorDiaUtil = 0.0;
+    bu.valorDiaFds = 6.0;
+    Expect.isTrue(bu.temSaldo());
+  }
+  
+  static void testNaoTemSaldoDiaUtil(){
+    bu.saldo = 3.0;
+    bu.valorDiaUtil = 6.0;
+    bu.valorDiaFds = 0.0;
+    Expect.isFalse(bu.temSaldo());
+  }
+  
+  static void testNaoTemSaldoDiaFds(){
+    bu.saldo = 3.0;
+    bu.valorDiaUtil = 0.0;
+    bu.valorDiaFds = 6.0;
+    Expect.isFalse(bu.temSaldo());
   }
   
   static void testCalculaProximaRecargaComFDS(){
